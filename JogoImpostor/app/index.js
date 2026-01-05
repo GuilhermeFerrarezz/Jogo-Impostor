@@ -5,7 +5,7 @@ import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-nati
 import Impostores from '../components/Impostores';
 import Tempo from '../components/Tempo'
 import { router } from 'expo-router'
-import { adicionarTempo, removeTodosTemas, salvarTemas, salvarJogador, getJogadores, removeJogador, adicionarNumeroImpostores, getNumeroImpostores, getTempo, getTemas, getImpostores, salvarImpostores, removeImpostores, salvarPalavra, removePalavra, removeTema } from '../services/dados.jsx';
+import { adicionarTempo, removeTodosTemas, salvarTemas, salvarJogador, getJogadores, removeJogador, adicionarNumeroImpostores, getNumeroImpostores, getTempo, getTemas, getImpostores, salvarImpostores, removeImpostores, salvarPalavra, removePalavra, removeTema, getAnimes, salvarAnimes } from '../services/dados.jsx';
 import { ClashRoyaleApi, AnimeApi, ComidaApi, CountriesAPI, F1TeamsApi, HeroesApi } from '../services/apis.jsx';
 import { useState, useEffect, useCallback } from 'react';
 import { useFocusEffect } from 'expo-router';
@@ -26,7 +26,26 @@ export default function ImpostorGame() {
         await removePalavra();
         await removeImpostores();
         await removeTema();
-        await removeTodosTemas();  
+        await removeTodosTemas();
+        let animeIds = await getAnimes()
+          if (animeIds.length < 1) {
+              animeIds = [
+                  { codigo: 1735, nome: 'Naruto' },
+                  { codigo: 21, nome: 'One Piece' },
+                  { codigo: 16498, nome: 'Attack on Titan' },
+                  { codigo: 38000, nome: 'Kimetsu no Yaiba' },
+                  { codigo: 52807, nome: 'One Punch Man' },
+                  { codigo: 49596, nome: 'Blue Lock' },
+                  { codigo: 40748, nome: 'Jujutsu Kaisen' },
+                  { codigo: 23755, nome: 'Nanatsu no Taizai' },
+                  { codigo: 44511, nome: 'Chainsaw Man' },
+                  { codigo: 22777, nome: 'Dragon Ball' }
+              ];
+              await salvarAnimes(animeIds)
+          }
+
+
+
     };
     load();
   }, [])
@@ -63,7 +82,7 @@ export default function ImpostorGame() {
 
 
     async function iniciarJogo() {
-        recarregar()
+        await recarregar()
         const jogadores = await getJogadores();
         setJogadores(jogadores);
         const impostores = await getNumeroImpostores();
@@ -163,19 +182,15 @@ export default function ImpostorGame() {
             }
             if (estadoAtual != false) {
                 router.navigate({ pathname: '/cardsJogadores' })
-            } else {
-                if (jogadores.length <= 3) {
+            } 
+        } else {
+            if (jogadores.length < 3) {
+                    console.log('Minimo 3')
                     Alert.alert('Mínimo 3 jogadores')
-                } else if (temas.length < 0) {
+                } else if (temas.length === 0) {
                     Alert.alert('Selecione um ou mais temas')
                     
                 }
-
-
-
-            }
-
-
         }
     }
 

@@ -4,7 +4,8 @@ import Categorias from './Categorias';
 import Entypo from '@expo/vector-icons/Entypo';
 import { useState } from 'react';
 import { salvarTemas, getTemas, removeTema } from '../services/dados.jsx';
-
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { router } from 'expo-router'
 export default function CategoriasContainer() {
     const [temas, setTemas] = useState([])
     const carregar = async () => {
@@ -46,8 +47,15 @@ export default function CategoriasContainer() {
                     <Categorias colorBackground={'#ff72deff'} color={'#62015fff'} text={'Pais'} onClick= {selecionarTema}><Pressable></Pressable></Categorias>
                     <Categorias colorBackground={'#72ff81ff'} color={'#01622eff'} text={'Heroes'} onClick= {selecionarTema}><Pressable></Pressable></Categorias>
                     <Categorias colorBackground={'#6fb9ebff'} color={'#1578d4ff'} text={'Clash Royale'} onClick= {selecionarTema}><Pressable></Pressable></Categorias>
-                    <Categorias colorBackground={'#F0001D'} color={'#b56770ff'} text={'Comida'} onClick= {selecionarTema}><Pressable></Pressable></Categorias>
-                    <Categorias colorBackground={'#b5b7faff'} color={'#a534f5ff'} text={'Anime'} onClick= {selecionarTema}></Categorias>
+                    <Categorias colorBackground={'#F0001D'} color={'#b56770ff'} text={'Comida'} onClick={selecionarTema}><Pressable></Pressable></Categorias>
+                    <View style ={{flexDirection: 'row', alignItems: 'center'}}>
+                    <Categorias colorBackground={'#b5b7faff'} color={'#a534f5ff'} text={'Anime'} onClick={selecionarTema}></Categorias>
+                    
+                        <Pressable onPress = {()=>{router.navigate({ pathname: '../animeTela' })}} style={{marginTop: 10, paddingLeft: 5}}><Ionicons name="settings-outline" size={24} color="black" /></Pressable>
+                    </View>
+
+
+
                     <Categorias colorBackground={'#ffa269ff'} color={'#bc805aff'} text={'F1'} onClick= {selecionarTema}><Pressable></Pressable></Categorias>
               
             </View>

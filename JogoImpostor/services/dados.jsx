@@ -112,3 +112,41 @@ export async function getPalavra() {
 export async function removePalavra() {
     await AsyncStorage.setItem("palavra", '');
 }
+
+
+export async function salvarAnime(codigo) {
+    const lista = await getAnimes();
+
+    lista.push(codigo);
+
+    const jsonLista = JSON.stringify(lista);
+    await AsyncStorage.setItem("animes", jsonLista);
+}
+
+export async function salvarAnimes(lista) {
+    const jsonLista = JSON.stringify(lista);
+    await AsyncStorage.setItem("animes", jsonLista);
+}
+
+
+
+export async function getAnimes() {
+    const dados = await AsyncStorage.getItem('animes');
+    const lista = dados ? JSON.parse(dados) : [];
+    return lista;
+}
+
+export async function removeAnime(codigo) {
+    const lista = await getAnimes();
+    const novaLista = lista.filter(x => x.codigo !== codigo);
+    const jsonLista = JSON.stringify(novaLista);
+    await AsyncStorage.setItem("animes", jsonLista);
+}
+
+export async function removeTodosAnimes() {
+    const lista = await getAnimes();
+    const novaLista = []
+    const jsonLista = JSON.stringify(novaLista);
+    await AsyncStorage.setItem("animes", jsonLista);
+}
+
