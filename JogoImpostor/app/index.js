@@ -6,8 +6,8 @@ import Impostores from '../components/Impostores';
 import Tempo from '../components/Tempo'
 import { router } from 'expo-router'
 import { adicionarTempo, removeTodosTemas, salvarTemas, salvarJogador, getJogadores, removeJogador, adicionarNumeroImpostores, getNumeroImpostores, getTempo, getTemas, getImpostores, salvarImpostores, removeImpostores, salvarPalavra, removePalavra, removeTema } from '../services/dados.jsx';
-import { ClashRoyaleApi, AnimeApi, ComidaApi, CountriesAPI, F1TeamsApi } from '../services/apis.jsx';
-import { useState, useEffect } from 'react';
+import { ClashRoyaleApi, AnimeApi, ComidaApi, CountriesAPI, F1TeamsApi, HeroesApi } from '../services/apis.jsx';
+import { useState, useEffect, useCallback } from 'react';
 import { useFocusEffect } from 'expo-router';
 
 

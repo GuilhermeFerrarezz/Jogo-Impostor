@@ -20,6 +20,8 @@ export default function timerTela1() {
       setTempoMin(tempoMin)
       setTempoSeg(tempoMin * 60)
 
+    if (tempoMin === 0) return
+
       intervaloTempo = setInterval(() => {
         setTempoSeg(prev => {
           if (prev <= 1) {

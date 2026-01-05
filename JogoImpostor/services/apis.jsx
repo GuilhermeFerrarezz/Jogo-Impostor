@@ -1,23 +1,41 @@
 export async function ComidaApi() {
+const comidas = [
+  "Pizza", "Lasanha", "Ravioli", "Espaguete", "Risoto", "Gnocchi/Nhoque", "Panettone",
+  "Hambúrguer", "Cheeseburger", "Hot dog", "Batata frita", "Onion rings",
+  "Nuggets", "Milk-shake",
+  "Sushi", "Sashimi", "Temaki", "Yakissoba", "Ramen",
+  "Taco", "Burrito", "Nachos",
+  "Feijoada", "Coxinha", "Pastel", "Pão de queijo", "Brigadeiro",
+  "Acarajé", "Moqueca", "Farofa",
+  "Empada", "Quindim", "Beijinho",
+  "Croissant", "Baguete",
+  , "Macaron",
+  "Bolo de chocolate", "Brownie", "Cupcake", 
+  "Sorvete", "Pudim", "Mousse", "Gelato",
+  "Churrasco", "Costela", "Picanha", "Bife à parmegiana",
+    "Strogonoff", "Frango assado", "Peixe grelhado"
+  
+]
         try {
-            let response = await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
-            let data = await response.json();
-            const nomeComida = data.meals[0].strMeal
+            
+            const nomeComida = comidas[Math.floor(Math.random() * comidas.length)]
             console.log(nomeComida)
-            Alert.alert('Recomenda-se pesquisar a comida que cair')
+            //Alert.alert('Recomenda-se pesquisar a comida que cair')
             return nomeComida
         } catch {
             return false
         }
     }
 
+
 export async function HeroesApi() {
+    const herois = ["Homem Aranha", "Superman", "Batman", "Mulher Maravilha", "Flash", "Homem de Ferro", "Capitao America", "Thor", "Hulk", "Viuva Negra", "Pantera Negra", "Doutor Estranho", "Homem Formiga", "Feiticeira Escarlate", "Visao", "Gaviao Arqueiro", "Soldado Invernal", "Capita Marvel", "Shazam", "Aquaman", "Lanterna Verde", "Cyborg", "Robin", "Asa Noturna", "Batgirl", "Supergirl", "Arqueiro Verde", "Raio Negro", "Venom", "Deadpool", "Wolverine", "Tempestade", "Professor Xavier", "Magneto", "Ciclope", "Justiceiro", "Homelander", "Invencivel", "Mulher Invisivel", "Batwoman", "A - train", "Starlight", "Soldier Boy"];
+    console.log(herois)
+
+
         try {
 
-            let id = Math.floor(Math.random() * 732)
-            let response = await fetch(`https://www.superheroapi.com/api.php/f580a9ba62cb7ebe6a8d331918162924/${id}`)
-            let data = await response.json();
-            const nomeHero = data.name
+            const nomeHero = herois[Math.floor(Math.random() * herois.length)]
             return nomeHero
         } catch {
             return false
@@ -41,9 +59,11 @@ export async function F1TeamsApi() {
      
 export async function CountriesAPI() {
         try {
-            let response = await fetch(`https://countries-api-abhishek.vercel.app/countries`)
+            let response = await fetch(`https://restcountries.com/v3.1/all?fields=name,translations,cca2`)
             let data = await response.json();
-            const nomePais = data.data[Math.floor(Math.random() * 188)].name
+            console.log(data)
+            const nomePais = data[Math.floor(Math.random() * 250)].translations.por.common
+            console.log(nomePais)
             return nomePais
         } catch {
             return false
@@ -53,15 +73,9 @@ export async function CountriesAPI() {
     }
 
 export async function ClashRoyaleApi() {
+    const cartas = ["Flechas", "Bombardeiro", "Arqueiras", "Cavaleiro", "Bola de Fogo", "Mini P.E.K.K.A", "Mosqueteira", "Gigante", "Príncipe", "Dragão Bebê", "Exército de Esqueletos", "Bruxa", "Goblins Lanceiros", "Goblins", "Cabana de Goblins", "Valquíria", "Relâmpago", "Barril de Goblins", "Esqueletos", "Servos", "Lápide", "Torre de Bombas", "Esqueleto Gigante", "Balão", "Canhão", "Bárbaros", "Foguete", "Cabana de Bárbaros", "Fúria", "X-Besta", "Tesla", "Horda de Servos", "Torre Inferno", "Corredor", "Gelo", "P.E.K.K.A", "Zap (Choque)", "Mago", "Espelho", "Morteiro", "Coletor de Elixir", "Golem", "Gigante Real", "Três Mosqueteiras", "Príncipe das Trevas", "Veneno", "Mago de Gelo", "Princesa", "Espírito de Fogo", "Fornalha", "Guardas", "Lava Hound", "Mineiro", "Sparky", "Lançador", "Espírito de Gelo", "Lenhador", "O Tronco", "Megasservo", "Dragão Infernal", "Golem de Gelo", "Cemitério", "Tornado", "Bárbaros de Elite", "Clone", "Mago Elétrico", "Goblin com Dardo", "Executor", "Aríete de Batalha", "Gangue de Goblins", "Bandida", "Bruxa Sombria", "Morcegos", "Carrinho de Canhão", "Máquina Voadora", "Barril de Esqueletos", "Megacavaleiro", "Eletrocutadores", "Caçador", "Fantasma Real", "Arqueiro Mágico", "Barril de Bárbaro", "Patifes", "Porcos Reais", "Bola de Neve", "Recrutas Reais", "Goblin Gigante", "Dragão Elétrico", "Domadora de Carneiro", "Destruidores de Muros", "Terremoto", "Jaula de Goblin", "Pescador", "Golem de Elixir", "Curadora Guerreira", "Pirotécnica", "Encomenda Real", "Espírito Curador", "Dragões Esqueleto", "Gigante Elétrico", "Espírito Elétrico", "Bruxa Mãe", "Escavadeira de Goblins", "Cavaleiro Dourado", "Rainha Arqueira", "Rei Esqueleto", "Mineiro Bombado", "Monge", "Fênix", "Pequeno Príncipe", "Vácuo", "Goblin Demolidor", "Máquina Goblin", "Maldição Goblin", "Arbusto Traiçoeiro", "Goblinstein", "Gigante das Runas", "Berserker", "Imperatriz Espiritual", "Vinhas", "Princesa da Torre", "Canhoneiro", "Duquesa das Adagas", "Cozinheiro Real"]
         try {
-            const response = await fetch('http://localhost:3000/cartas')
-
-            const data = await response.json();
-            const indice = Math.floor(Math.random() * data.items.length)
-
-            const nomeCarta = data.items.map(carta => carta.name)[indice]
-
-            console.log(data);
+            const nomeCarta = cartas[Math.floor(Math.random() * cartas.length)]
             console.log(nomeCarta);
             return nomeCarta
         } catch {
@@ -77,7 +91,7 @@ export async function AnimeApi() {
             // 1725 = naruto
             // 21 = one piece
             // 16498 = AOT
-            // 38000 = Kimetsy
+            // 38000 = Kimetsu
             // 52807 = One Punch Man
             // 49596 = Blue Lock
             // 40748 = Jujutsu Kaisen
