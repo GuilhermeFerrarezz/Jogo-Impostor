@@ -62,5 +62,5 @@ npx react-native run-android # for Android
 npx react-native run-ios # for iOS
 # or
 npx react-native run-web # for web
-Author
+# Author
 Guilherme Ferrarez
