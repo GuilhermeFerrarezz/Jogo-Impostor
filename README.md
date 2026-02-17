@@ -40,14 +40,8 @@ Game Logic: Automated turn-based system.
 Various themes: Food, Clash Royale, Anime characters (with the option to add and remove animes), Formula 1 teams, Heroes, and Countries..
 
 Screenshots
-<img width="769" height="1600" alt="image" src="https://github.com/user-attachments/assets/b1ba8ff8-a697-4ec4-a013-faa6dc6b19a4" />
-<img width="759" height="1600" alt="image" src="https://github.com/user-attachments/assets/cb8ac25f-e589-4d07-91c6-5ffc5e082a52" />
-<img width="766" height="1600" alt="image" src="https://github.com/user-attachments/assets/32794ce3-da76-4182-adc1-e63bca4214c3" />
-<img width="764" height="1600" alt="image" src="https://github.com/user-attachments/assets/9fcfd7c1-dac1-4526-91a6-61316b7e0051" />
-<img width="762" height="1600" alt="image" src="https://github.com/user-attachments/assets/a2da8c48-43dc-4360-bfb2-335955549609" />
-<img width="761" height="1600" alt="image" src="https://github.com/user-attachments/assets/0edeba29-4ff2-430d-946c-68974e029dc3" />
-<img width="761" height="1600" alt="image" src="https://github.com/user-attachments/assets/1fc09b8e-c930-4086-8290-dc1a8e45dfaa" />
-<img width="762" height="1600" alt="image" src="https://github.com/user-attachments/assets/7aa4ffc2-bc65-433f-9a8f-1896990a451a" />
+ 
+<img src="https://github.com/user-attachments/assets/b1ba8ff8-a697-4ec4-a013-faa6dc6b19a4" width="180" /> <img src="https://github.com/user-attachments/assets/cb8ac25f-e589-4d07-91c6-5ffc5e082a52" width="180" /> <img src="https://github.com/user-attachments/assets/32794ce3-da76-4182-adc1-e63bca4214c3" width="180" /> <img src="https://github.com/user-attachments/assets/9fcfd7c1-dac1-4526-91a6-61316b7e0051" width="180" /> <img src="https://github.com/user-attachments/assets/a2da8c48-43dc-4360-bfb2-335955549609" width="180" /> <img src="https://github.com/user-attachments/assets/0edeba29-4ff2-430d-946c-68974e029dc3" width="180" /> <img src="https://github.com/user-attachments/assets/1fc09b8e-c930-4086-8290-dc1a8e45dfaa" width="180" /> <img src="https://github.com/user-attachments/assets/7aa4ffc2-bc65-433f-9a8f-1896990a451a" width="180" />
 
 
 
